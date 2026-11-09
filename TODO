@@ -1,0 +1,173 @@
+---FINAL--
+тема: мебельный каталог/премиум ателье
+название: άνεση(anesi)
+цитата: True greatness does not lie in overcoming inconveniences, but in creating a world where they cease to exist.
+шаги: 
+    дизайн и идея
+    фронт 
+    бек
+    база данных 
+    тестирование
+
+референсы:
+    палитра: https://i.pinimg.com/736x/82/1a/7c/821a7cc3147efa5e024959cf5a3c4ed5.jpg,
+    эстетика: 
+        https://i.pinimg.com/736x/83/78/63/837863a6264a568bb81b0b7c406d5a0e.jpg, 
+        https://i.pinimg.com/1200x/2b/d0/0c/2bd00c348ba3cfc9209fbf21adb9de47.jpg, 
+        https://i.pinimg.com/736x/70/18/21/701821460d02e28df53079a7cf1106a4.jpg,
+        https://i.pinimg.com/736x/35/e3/4a/35e34a474e26f4d98c9f50f99004bd4c.jpg,
+    идея:
+        https://i.pinimg.com/736x/82/8c/12/828c12dcbe0e1ab8f1e6bd3bf16c265d.jpg,
+        https://i.pinimg.com/1200x/93/66/09/9366091579cee92eb161779c276b7d46.jpg
+    шрифты:
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Antique+Soft&display=swap');
+
+дизайн и идея: 
+    выбор названия
+    подбор референсов
+    цветовая палитра
+    общая структура и лендиг 
+    блоки
+    шрифты
+    подбор мебели/материалов
+
+фронт: 
+    архитектура проекта 
+    разработка маршрутов 
+    подготовка компонентов:
+        серч бар 
+        сортировка 
+        история заказов 
+        футер
+        хеадер
+        карточки товаров 
+    подготовка страниц:
+        главная
+        каталог (готовые решения)
+        галерея (мебель под заказ)
+        ателье (индивидуальный проект)
+        декор (готовый декор)
+        детали
+        корзина 
+        обновление(права админа)
+        добавление(права админа)
+        регистрация 
+        вход
+        кабинет
+    определение функционала 
+    модальные окна:
+        оформление заказа
+        заявка на индивидуальный заказ
+        удаление/предупреждение(права админа)
+    адаптивность под разные устройства 
+    анимации 
+
+бек:
+    связь с фронтом
+    настройка апи 
+    обработка апи
+    подключение бд
+    модели пользователей и товаров 
+    регистрация и авторизация
+    проверка данных 
+    обработка crud 
+
+база данных:
+    каталог:
+        id
+        title
+        description
+        in stock
+        included items :
+            [
+                {
+                    item, 
+                    price
+                    count, 
+                    materials, 
+                    size: {
+                        width, 
+                        height, 
+                        depth
+                    }
+                }
+            ]
+        price 
+        category 
+        images
+    галерея:
+        id
+        title
+        description
+        material
+        fabric
+        color 
+        price 
+        category
+        in stock  
+        images
+        size: 
+            {
+                width, 
+                height, 
+                depth
+            }
+    заказы:
+        id 
+        time
+        person:
+            {
+                contacts info
+                id
+            }
+        products:
+            [
+               {
+                    item, 
+                    count, 
+                    price, 
+                    materials
+                    size: {
+                        width, 
+                        height, 
+                        depth
+                    }
+                } 
+            ]
+        total price 
+    декор:
+        id
+        title
+        description
+        material
+        color 
+        price 
+        category  
+        images
+        count 
+        in stock
+        size: 
+            {
+                width, 
+                height, 
+                depth
+            }
+    заявка на индивидуальную работу:
+        id
+        time 
+        person 
+        theme 
+        status
+        message
+    пользователи:
+        id
+        name 
+        surname
+        email 
+        phone
+        orders:{}
+        requests:{}
+        role
+тестирование:
+    проверка общего функционала и вида 
+    загрузка на гитхаб 
